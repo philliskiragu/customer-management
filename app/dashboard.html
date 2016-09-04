@@ -1,13 +1,16 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-</head>
-<body data-ng-app="custApp">
-<div>
-    <h4>Welcome  </h4>
+<div class="row">
+    <div class="large-12">
+        <div data-ng-controller="displayCustomerCtrl as list">
+            <ul data-ng-repeat="customer in list.customers">
+                <li><a data-ng-click="list.editCustomer(customer)" data-ui-sref="viewcustomer">
+                    {{customer.id}} Firstname: {{ customer.firstName }} Lastname: {{ customer.lastName }}
+                    Email: {{ customer.email }} Order: {{customer.order }}</a></li>
+            </ul>
+        </div>
+        <ul>
+            <li><a data-ui-sref="addcustomer">Add A Customer</a></li>
+            <li><a data-ui-sref="allcustomers">View All Customers</a></li>
+            <li><button data-ng-click="main.logout()" data-ng-show="main.isAuthed()">Logout</button></li>
+        </ul>
+    </div>
 </div>
-</body>
-</html>
