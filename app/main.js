@@ -37,6 +37,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: 'app/auth/signup.html'
                 }
             }
+        })
+        .state('addcustomer', {
+            url: '/addcustomer',
+            templateUrl: 'app/customers/addcustomer.html'
+        })
+        .state('allcustomers',{
+            url: '/allcustomers',
+            templateUrl: 'app/customers/viewallcustomers.html'
+        })
+        .state('viewcustomer',{
+            url: '/customer/{id}',
+            templateUrl: 'app/customers/viewcustomer.html'
         });
-
 });
