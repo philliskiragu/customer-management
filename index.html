@@ -6,11 +6,13 @@
     <link rel="stylesheet" type="text/css" href="assets/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-    <script src="assets/js/angular.min.js"></script>
-    <script src="/bower_components/angular-messages/angular-messages.js"></script>
-    <script src="assets/js/angular-ui-router.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>-->
+    <script type="text/javascript" src="assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="app/main.js"></script>
-    <!-- <script type="text/javascript" src="js/directive_sample.js"></script> -->
+    <script type="text/javascript" src="app/auth/authcontroller.js"></script>
+
 
     <title>Customer Management</title>
 </head>
@@ -24,21 +26,19 @@
             <li class="menu-text" data-ui-sref="#">Customer Management</li>
         </ul>
     </div>
+    <div class="top-bar-right">
+        <ul>
+            <li><a data-ui-sref=".auth">auth</a></li>
+        </ul>
+    </div>
 </div>
 
+<p> {{'angular' + 'Js'}}</p>
 
 <div class="row">
-    <div class="large-4 column"></div>
-    <div class="large-4 column">
-        <div class="callout secondary">
-            <h5>Welcome To The Customer Management System</h5>
-            <p>Login below to access the dashboard</p>
-            <a data-ui-sref="login">Login</a><br>
-            <a data-ui-sref="signup">Sign Up</a>
-
-        </div>
+    <div class="large-12">
+        <div data-ui-view></div>
     </div>
-    <div class="large-4 column"></div>
 </div>
 </body>
 
