@@ -10,5 +10,9 @@
 
 body{
   margin-bottom: 50px;
-  background-color: ;
+  /*background-color: blue ;*/
+}
+
+ul {
+  list-style-type: none;
 }
