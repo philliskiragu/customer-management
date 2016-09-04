@@ -1,0 +1,26 @@
+<!---
+  * Cytonn Technologies
+  * @author Phillis Kiragu<pkiragu@cytonn.com
+---->
+<div data-ng-controller="authCtrl as auth" class="row">
+    <div class="large-4 column">
+        <div class="callout secondary">
+            <h5>Welcome To The Customer Management System</h5>
+            <p> Today {{'is a good day'}}</p>
+        </div>
+    </div>
+    <div class="large-4 column">
+        <div class="callout secondary">
+            <p>sign up below to access the dashboard</p>
+
+            <div data-ui-view="signup"></div>
+        </div>
+    </div>
+    <div class="large-4 column">
+        <div class="callout secondary">
+            <p>Login below to access the dashboard</p>
+
+            <div data-ui-view="login"></div>
+        </div>
+    </div>
+</div>
