@@ -1,0 +1,22 @@
+<div data-ng-controller="addCustomerCtrl as addcust">
+    <form data-ng-submit="addcust.addCustomer(addcust.newCustomer)">
+        <h1>Add customer</h1>
+        <label>
+            First Name:
+            <input type="text" name="firstName" data-ng-model="addcust.newCustomer.firstName" required/>
+        </label>
+        <label>
+            Last Name:
+            <input type="text" name="lastName" data-ng-model="addcust.newCustomer.lastName" required/>
+        </label>
+        <label>
+            Email Address:
+            <input type="text" name="email" data-ng-model="addcust.newCustomer.email" required/>
+        </label>
+        <label>
+            Order Name:
+            <input type="text" name="order" data-ng-model="addcust.newCustomer.order" required/>
+        </label>
+        <button type="submit">Add Customer</button>
+    </form>
+</div>
