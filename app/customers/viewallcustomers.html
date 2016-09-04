@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="large-12">
+        <div data-ng-controller="displayCustomerCtrl as list">
+            <input type="text" data-ng-model="letter" placeholder="Enter a letter to filter">
+            <ul data-ng-repeat="customer in list.customers | filter:letter">
+                <li> Firstname: {{ customer.firstName }} Lastname: {{ customer.lastName }}
+                    Email: {{ customer.email }} Order: {{customer.order }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
