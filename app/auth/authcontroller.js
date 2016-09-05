@@ -30,7 +30,7 @@ app.factory('auth', function ($http, API, $window) {
         $http.post(API + '/auth/register', {username: username, password: password})
             .then(function (response) {
                 alert('user registered');
-                console.log("register: ", response);
+                //console.log("register: ", response);
             }, function (response) {
                 //console.log(response.data);
                 alert('an error occurred');
@@ -46,9 +46,11 @@ app.factory('auth', function ($http, API, $window) {
             .then(function (response) {
                 console.log("login response: ", response);
                 $window.localStorage.setItem('token', response.data.token);
-                console.log("token: ", token);
+                alert('login Successful!');
+                //console.log("token: ", token);
 
             }, function (response) {
+                console.log(response.data);
                 alert('login failed!');
             });
     };
