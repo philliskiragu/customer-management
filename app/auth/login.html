@@ -2,16 +2,17 @@
   * Cytonn Technologies
   * @author Phillis Kiragu<pkiragu@cytonn.com
 ---->
-<form>
-    <label>
-        Username:
-        <input type="text" name="username" data-ng-model="username"  required />
-    </label>
-    <label>
-        Password:
-        <input type="password" name="password" data-ng-model="password"  required />
-    </label>
-    <!--<a data-ui-sref="dashboard" class="button">Login</a>-->
-    <button data-ng-click="login()">Login</button>
-</form>
 
+<div data-ng-controller="AuthCtrl as main">
+    <form>
+        <label>Username</label>
+        <input type="text" data-ng-model="username" placeholder="username"><br>
+
+        <label>Password</label>
+        <input type="password" data-ng-model="password" placeholder="password"><br>
+
+        <a data-ui-sref="dashboard" type="button" class="secondary button" data-ng-click="login() ">Login</a>
+
+
+    </form>
+</div>
