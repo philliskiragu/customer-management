@@ -32,8 +32,8 @@ app.factory('auth', function ($http, API, $window) {
                 alert('user registered');
                 console.log("register: ", response);
             }, function (response) {
-                console.log(response.data);
-                //alert('an error occurred');
+                //console.log(response.data);
+                alert('an error occurred');
             });
     };
 
@@ -60,7 +60,7 @@ app.factory('auth', function ($http, API, $window) {
     return auth;
 });
 
-app.controller('authCtrl', function ($scope, auth, API, $http) {
+app.controller('AuthCtrl', function ($scope, auth, API, $http) {
 
     $scope.login = function () {
         auth.login($scope.username, $scope.password);
