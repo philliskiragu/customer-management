@@ -5,7 +5,7 @@ var app = angular.module('custApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/auth');
 
     $stateProvider
 
