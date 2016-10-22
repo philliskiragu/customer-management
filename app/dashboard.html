@@ -1,16 +1,67 @@
+<div class="space"></div>
+<div class="row space">
+    <div class="large-4 column">
+        <a class="button success expand" data-ui-sref="addcustomer">Add A Customer</a>
+    </div>
+
+
+    <div class="large-4 column" data-ng-controller="AuthCtrl as main">
+        <a class="button success expand" data-ui-sref="auth" data-ng-click="logout()">Logout</a>
+    </div>
+</div>
+
 <div class="row">
     <div class="large-12">
         <div data-ng-controller="displayCustomerCtrl as list">
-            <ul data-ng-repeat="customer in list.customers">
-                <li><a data-ng-click="list.editCustomer(customer)" data-ui-sref="viewcustomer">
-                    {{customer.id}} Firstname: {{ customer.firstName }} Lastname: {{ customer.lastName }}
-                    Email: {{ customer.email }} Order: {{customer.order }}</a></li>
-            </ul>
+            <input type="text" data-ng-model="name" placeholder="Search">
+
+            <div data-ng-controller="displayCustomerCtrl as list">
+                <div class="callout primary" data-ng-repeat="customer in list.customers | filter:name | orderBy:'-id' ">
+                    <div class="callout-title-success"><h2>{{ customer.firstName }} {{ customer.lastName}} ~ {{
+                        customer.email }}</h2>
+                    </div>
+
+                    <h3 class="right">Total Orders: {{ customer.orders.length}} </h3>
+
+                    <div class="callout-content">
+                        <div data-ng-repeat="order in customer.orders" class="item">
+                            <div class="row">
+                                <div class="media-object">
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <img class="thumbnail" src="/assets/img/image.png">
+                                        </div>
+                                    </div>
+                                    <div class="media-object-section main-section">
+                                        <h4>Item: {{order.item }}</h4>
+
+                                        <p>Quantity: {{order.quantity}}</p>
+
+                                        <p>Price: {{order.price}}</p>
+
+                                        <p>Description: {{order.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <a class="button primary" data-ui-sref="addcustomerorder({id: customer.id})"
+                               data-ng-click="createCustomerOrder(customer)">Add order</a>
+                            <a class="button primary" data-ui-sref="editcustomer({id: customer.id})">Edit Customer
+                                Details</a>
+                            <a class="button primary" data-ng-click="list.deleteCustomer(customer)">Delete Customer</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div data-ui-view></div>
+            </div>
         </div>
-        <ul>
-            <li><a data-ui-sref="addcustomer">Add A Customer</a></li>
-            <li><a data-ui-sref="allcustomers">View All Customers</a></li>
-            <li><button data-ng-click="main.logout()" data-ng-show="main.isAuthed()">Logout</button></li>
-        </ul>
     </div>
 </div>
+
+
+
+
