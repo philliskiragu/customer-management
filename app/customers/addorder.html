@@ -1,0 +1,24 @@
+<div data-ng-controller="addCustomerOrderCtrl as addorder">
+    <form data-ng-submit="addorder.addCustomerOrder(addorder.customerDetails)">
+        <h1>Add Order</h1>
+        <label><input type="hidden" name="id" data-ng-model="addorder.id" required/></label>
+        <label>
+            Item:
+            <input type="text" name="item" data-ng-model="addorder.item" required/>
+        </label>
+        <label>
+            Quantity:
+            <input type="text" name="quantity" data-ng-model="addorder.quantity" required/>
+        </label>
+        <label>
+            Price:
+            <input type="text" name="price" data-ng-model="addorder.price" required/>
+        </label>
+        <label>
+            Description:
+            <input type="text" name="description" data-ng-model="addorder.description" required/>
+        </label>
+
+        <button class="button success expand" type="submit">Add Order</button>
+    </form>
+</div>
