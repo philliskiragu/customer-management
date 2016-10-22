@@ -1,0 +1,20 @@
+<div data-ng-controller="editCustomerCtrl as editcust">
+    <form data-ng-submit="editcust.editCustomer(editcust.customerDetails)">
+        <h1>Edit customer</h1>
+        <label><input type="hidden" name="id" data-ng-model="editcust.id" required/></label>
+        <label>
+            First Name:
+            <input type="text" name="firstName" data-ng-model="editcust.firstname" required/>
+        </label>
+        <label>
+            Last Name:
+            <input type="text" name="lastName" data-ng-model="editcust.lastname" required/>
+        </label>
+        <label>
+            Email Address:
+            <input type="text" name="email" data-ng-model="editcust.email" required/>
+        </label>
+
+        <button class="button success expand" type="submit">Update Customer</button>
+    </form>
+</div>
