@@ -14,9 +14,9 @@
             <input type="text" name="email" data-ng-model="addcust.newCustomer.email" required/>
         </label>
         <label>
-            Order Name:
-            <input type="text" name="order" data-ng-model="addcust.newCustomer.order" required/>
+            <input type="hidden" name="orders" data-ng-model="addcust.newCustomer.orders" required/>
         </label>
-        <button type="submit">Add Customer</button>
+
+        <button class="button success expand" type="submit">Add Customer</button>
     </form>
 </div>
