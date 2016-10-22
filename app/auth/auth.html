@@ -3,24 +3,31 @@
   * @author Phillis Kiragu<pkiragu@cytonn.com
 ---->
 <div data-ng-controller="AuthCtrl as main" class="row">
-    <div class="large-4 column">
-        <div class="callout secondary">
+    <div class="large-12 column space">
+        <div class="callout-title-primary">
             <h5>Welcome To The Customer Management System</h5>
-            <p> Today {{'is a good day'}}</p>
+
+            <p> Sign Up and then Login Below</p>
         </div>
     </div>
-    <div class="large-4 column">
-        <div class="callout secondary">
-            <p>sign up below to access the dashboard</p>
-
-            <div data-ui-view="signup"></div>
+    <div class="large-6 column">
+        <div class="callout">
+            <div class="callout-title-auth">
+                <p>Sign Up </p>
+            </div>
+            <div class="callout-content">
+                <div data-ui-view="signup"></div>
+            </div>
         </div>
     </div>
-    <div class="large-4 column">
-        <div class="callout secondary">
-            <p>Login below to access the dashboard</p>
-
-            <div data-ui-view="login"></div>
+    <div class="large-6 column">
+        <div class="callout">
+            <div class="callout-title-auth">
+                <p>Login below to access the dashboard</p>
+            </div>
+            <div class="callout-content">
+                <div data-ui-view="login"></div>
+            </div>
         </div>
     </div>
 </div>

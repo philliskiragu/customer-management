@@ -3,15 +3,15 @@
   * @author Phillis Kiragu<pkiragu@cytonn.com
 ---->
 
-<div ng-controller="AuthCtrl as main">
+<div data-ng-controller="AuthCtrl as main">
     <form>
         <label>Username</label>
-        <input type="text" ng-model="username" placeholder="username"><br>
+        <input type="text" data-ng-model="username" placeholder="username"><br>
 
         <label>Password</label>
-        <input type="password" ng-model="password" placeholder="password"><br>
+        <input type="password" data-ng-model="password" placeholder="password"><br>
 
-        <button class="secondary button" ng-click="register()">Register</button>
+        <button class="button primary" data-ng-click="register()">Register</button>
     </form>
 </div>
 

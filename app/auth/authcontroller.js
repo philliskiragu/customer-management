@@ -23,7 +23,7 @@ app.factory('jwtInterceptor', function ($window) {
     };
 });
 
-app.factory('auth', function ($http, API, $window) {
+app.factory('auth', function ($http, API, $window, $location) {
     var auth = {};
 
     auth.register = function (username, password) {
@@ -47,7 +47,7 @@ app.factory('auth', function ($http, API, $window) {
                 console.log("login response: ", response);
                 $window.localStorage.setItem('token', response.data.token);
                 alert('login Successful!');
-                //console.log("token: ", token);
+                $location.path('dashboard');
 
             }, function (response) {
                 console.log(response.data);
@@ -65,11 +65,11 @@ app.factory('auth', function ($http, API, $window) {
 app.controller('AuthCtrl', function ($scope, auth, API, $http) {
 
     $scope.login = function () {
+        console.log($scope.username);
         auth.login($scope.username, $scope.password);
     };
 
     $scope.register = function () {
-        console.log($scope.username);
         auth.register($scope.username, $scope.password);
 
     };
@@ -77,13 +77,5 @@ app.controller('AuthCtrl', function ($scope, auth, API, $http) {
         auth.logout();
     };
 
-    $scope.getQuote = function () {
-        $http.get(API + '/auth/quote')
-            .then(function (response) {
-                $scope.quote = response.data.message;
-            }, function () {
-
-            });
-    }
 
 });
