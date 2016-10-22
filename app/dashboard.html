@@ -14,7 +14,6 @@
     <div class="large-12">
         <div data-ng-controller="displayCustomerCtrl as list">
             <input type="text" data-ng-model="name" placeholder="Search">
-
             <div data-ng-controller="displayCustomerCtrl as list">
                 <div class="callout primary" data-ng-repeat="customer in list.customers | filter:name | orderBy:'-id' ">
                     <div class="callout-title-success"><h2>{{ customer.firstName }} {{ customer.lastName}} ~ {{
