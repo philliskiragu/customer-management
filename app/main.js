@@ -39,15 +39,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
         .state('addcustomer', {
-            url: '/addcustomer',
+            url: '/add-customer',
             templateUrl: 'app/customers/addcustomer.html'
         })
-        .state('allcustomers',{
-            url: '/allcustomers',
-            templateUrl: 'app/customers/viewallcustomers.html'
+        .state('editcustomer',{
+            url: '/edit-customer/:id',
+            templateUrl: 'app/customers/editcustomer.html'
         })
-        .state('viewcustomer',{
-            url: '/customer/{id}',
-            templateUrl: 'app/customers/viewcustomer.html'
+        .state('addcustomerorder',{
+            url: '/customer/:id/addorder',
+            templateUrl: 'app/customers/addorder.html'
         });
 });
